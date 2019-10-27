@@ -8,6 +8,9 @@ IM_SIZE = 64
 MIN_SHAPE_SIZE = 5
 MAX_SHAPE_SIZE = IM_SIZE / 2
 
+TRIANGLE_ANGLE_1 = 0
+TRIANGLE_ANGLE_2 = -math.pi / 3
+
 def createImage(filename, shape, color):
   r = randint(230, 255)
   g = randint(230, 255)
@@ -35,15 +38,13 @@ def drawShape(draw, shape, color):
     draw.ellipse([(x, y), (x + r, y + r)], fill=color.value)
 
   elif shape is Shape.TRIANGLE:
-    angle = math.radians(randint(0, 359))
-    angle2 = angle + math.pi / 3
     s = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     x = randint(s, IM_SIZE - s)
     y = randint(s, IM_SIZE - s)
     draw.polygon([
       (x, y),
-      (x + s * math.cos(angle), y + s * math.sin(angle)),
-      (x + s * math.cos(angle2), y + s * math.sin(angle2)),
+      (x + s * math.cos(TRIANGLE_ANGLE_1), y + s * math.sin(TRIANGLE_ANGLE_1)),
+      (x + s * math.cos(TRIANGLE_ANGLE_2), y + s * math.sin(TRIANGLE_ANGLE_2)),
     ], fill=color.value)
 
   else:
