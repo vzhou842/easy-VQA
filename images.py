@@ -21,7 +21,7 @@ def createImage(filename, shape, color):
   drawShape(draw, shape, color)
   del draw
 
-  im.save(f'images/{filename}.png', 'png')
+  im.save(f'data/images/{filename}.png', 'png')
 
 def drawShape(draw, shape, color):
   if shape is Shape.RECTANGLE:
