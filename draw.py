@@ -14,28 +14,34 @@ class Shape(Enum):
   TRIANGLE = 3
 
 def createImage(filename, shape):
-  im = Image.new('RGBA', (IM_SIZE, IM_SIZE), (255, 255, 255, 255))
+  r = randint(230, 255)
+  g = randint(230, 255)
+  b = randint(230, 255)
+  im = Image.new('RGB', (IM_SIZE, IM_SIZE), (r, g, b))
 
   draw = ImageDraw.Draw(im)
   drawShape(draw, shape)
   del draw
 
-  im.save(filename, 'png')
-
+  im.save(filename + '.png', 'png')
 
 def drawShape(draw, shape):
+  fill = (255, 255, 255)
+  while (sum(fill) >= 500):
+    fill = (randint(0, 255), randint(0, 255), randint(0, 255))
+
   if shape is Shape.RECTANGLE:
     w = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     h = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     x = randint(w, IM_SIZE - w)
     y = randint(h, IM_SIZE - h)
-    draw.rectangle([(x, y), (x + w, y + h)], fill=(255, 0, 0))
+    draw.rectangle([(x, y), (x + w, y + h)], fill=fill)
 
   elif shape is Shape.CIRCLE:
     r = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     x = randint(r, IM_SIZE - r)
     y = randint(r, IM_SIZE - r)
-    draw.ellipse([(x, y), (x + r, y + r)], fill=(255, 0, 0))
+    draw.ellipse([(x, y), (x + r, y + r)], fill=fill)
 
   elif shape is Shape.TRIANGLE:
     angle = math.radians(randint(0, 359))
@@ -47,11 +53,11 @@ def drawShape(draw, shape):
       (x, y),
       (x + s * math.cos(angle), y + s * math.sin(angle)),
       (x + s * math.cos(angle2), y + s * math.sin(angle2)),
-    ], fill=(255, 0, 0))
+    ], fill=fill)
 
   else:
     raise Exception('Invalid shape!')
 
-createImage('rectangle.png', Shape.RECTANGLE)
-createImage('circle.png', Shape.CIRCLE)
-createImage('triangle.png', Shape.TRIANGLE)
+createImage('rectangle', Shape.RECTANGLE)
+createImage('circle', Shape.CIRCLE)
+createImage('triangle', Shape.TRIANGLE)
