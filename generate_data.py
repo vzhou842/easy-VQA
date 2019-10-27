@@ -4,24 +4,40 @@ from images import createImage
 from questions import createQuestions
 from random import choice
 import json
+import os
+
+if not os.path.exists('data/train/images'):
+  os.makedirs('data/train/images/')
+if not os.path.exists('data/test/images'):
+  os.makedirs('data/test/images/')
 
 colors = list(Color)
 shapes = list(Shape)
 
-allQuestions = []
+NUM_TRAIN = 800
+NUM_TEST = 200
 
-NUM_IMAGES = 10
+trainQuestions = []
+testQuestions = []
 
-for i in range(NUM_IMAGES):
+for i in range(NUM_TRAIN):
   shape = choice(shapes)
   color = choice(colors)
 
-  createImage(i, shape, color)
+  createImage(f'data/train/images/{i}.png', shape, color)
+  trainQuestions += createQuestions(shape, color, i)
 
-  questions = list(map(lambda x: x + (i,), createQuestions(shape, color)))
-  allQuestions += questions
+for i in range(NUM_TEST):
+  shape = choice(shapes)
+  color = choice(colors)
 
-with open('data/questions.json', 'w') as file:
-  json.dump(questions, file)
+  createImage(f'data/test/images/{i}.png', shape, color)
+  testQuestions += createQuestions(shape, color, i)
 
-print(f'Generated {NUM_IMAGES} images and {len(allQuestions)} questions.')
+with open('data/train/questions.json', 'w') as file:
+  json.dump(trainQuestions, file)
+with open('data/test/questions.json', 'w') as file:
+  json.dump(testQuestions, file)
+
+print(f'Generated {NUM_TRAIN} train images and {len(trainQuestions)} train questions.')
+print(f'Generated {NUM_TEST} test images and {len(testQuestions)} test questions.')
