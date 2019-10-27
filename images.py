@@ -1,17 +1,12 @@
 from PIL import Image, ImageDraw
 from random import randint
-from enum import Enum
+from shape import Shape
 import math
 
 IM_SIZE = 64
 
 MIN_SHAPE_SIZE = 5
 MAX_SHAPE_SIZE = IM_SIZE / 2
-
-class Shape(Enum):
-  RECTANGLE = 1
-  CIRCLE = 2
-  TRIANGLE = 3
 
 def createImage(filename, shape):
   r = randint(230, 255)
@@ -57,7 +52,3 @@ def drawShape(draw, shape):
 
   else:
     raise Exception('Invalid shape!')
-
-createImage('rectangle', Shape.RECTANGLE)
-createImage('circle', Shape.CIRCLE)
-createImage('triangle', Shape.TRIANGLE)
