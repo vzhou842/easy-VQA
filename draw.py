@@ -23,7 +23,7 @@ def createImage(filename, shape):
   drawShape(draw, shape)
   del draw
 
-  im.save(filename + '.png', 'png')
+  im.save('images/' + filename + '.png', 'png')
 
 def drawShape(draw, shape):
   fill = (255, 255, 255)
