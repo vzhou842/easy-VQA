@@ -19,16 +19,19 @@ NUM_TEST = 200
 
 def create_data(image_path, num):
   qs = []
+  num_yes_no = 0
   for i in range(num):
     shape = choice(shapes)
     color = choice(colors)
 
     create_image(f'{image_path}/{i}.png', shape, color)
-    qs += create_questions(shape, color, i)
-  return qs
+    new_qs, new_num_yes_no = create_questions(shape, color, i)
+    qs += new_qs
+    num_yes_no += new_num_yes_no
+  return qs, num_yes_no
 
-train_questions = create_data('data/train/images', NUM_TRAIN)
-test_questions = create_data('data/test/images', NUM_TEST)
+train_questions, num_train_yes_no = create_data('data/train/images', NUM_TRAIN)
+test_questions, num_test_yes_no = create_data('data/test/images', NUM_TEST)
 
 all_questions = train_questions + test_questions
 all_answers = list(set(map(lambda q: q[1], all_questions)))
@@ -45,3 +48,5 @@ with open('data/answers.txt', 'w') as file:
 print(f'Generated {NUM_TRAIN} train images and {len(train_questions)} train questions.')
 print(f'Generated {NUM_TEST} test images and {len(test_questions)} test questions.')
 print(f'{len(all_answers)} total possible answers.')
+print(f'{num_train_yes_no} training questions are yes/no.')
+print(f'{num_test_yes_no} testing questions are yes/no.')

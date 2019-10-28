@@ -27,4 +27,4 @@ def create_questions(shape, color, image_id):
   yes_no_questions = list(filter(lambda _: randint(0, 4) is 0, yes_no_questions))
 
   all_questions = questions + yes_no_questions
-  return list(map(lambda x: x + (image_id,), all_questions))
+  return (list(map(lambda x: x + (image_id,), all_questions)), len(yes_no_questions))
