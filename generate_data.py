@@ -34,10 +34,18 @@ for i in range(NUM_TEST):
   createImage(f'data/test/images/{i}.png', shape, color)
   testQuestions += createQuestions(shape, color, i)
 
+all_questions = trainQuestions + testQuestions
+all_answers = list(set(map(lambda q: q[1], all_questions)))
+
 with open('data/train/questions.json', 'w') as file:
   json.dump(trainQuestions, file)
 with open('data/test/questions.json', 'w') as file:
   json.dump(testQuestions, file)
 
+with open('data/answers.txt', 'w') as file:
+  for answer in all_answers:
+    file.write(f'{answer}\n')
+
 print(f'Generated {NUM_TRAIN} train images and {len(trainQuestions)} train questions.')
 print(f'Generated {NUM_TEST} test images and {len(testQuestions)} test questions.')
+print(f'{len(all_answers)} total possible answers.')
