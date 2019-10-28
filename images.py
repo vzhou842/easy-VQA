@@ -11,19 +11,19 @@ MAX_SHAPE_SIZE = IM_SIZE / 2
 TRIANGLE_ANGLE_1 = 0
 TRIANGLE_ANGLE_2 = -math.pi / 3
 
-def createImage(filename, shape, color):
+def create_image(filename, shape, color):
   r = randint(230, 255)
   g = randint(230, 255)
   b = randint(230, 255)
   im = Image.new('RGB', (IM_SIZE, IM_SIZE), (r, g, b))
 
   draw = ImageDraw.Draw(im)
-  drawShape(draw, shape, color)
+  draw_shape(draw, shape, color)
   del draw
 
   im.save(filename, 'png')
 
-def drawShape(draw, shape, color):
+def draw_shape(draw, shape, color):
   if shape is Shape.RECTANGLE:
     w = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     h = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
