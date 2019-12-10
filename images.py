@@ -33,8 +33,8 @@ def draw_shape(draw, shape, color):
   if shape is Shape.RECTANGLE:
     w = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
     h = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
-    x = randint(w, IM_DRAW_SIZE - w)
-    y = randint(h, IM_DRAW_SIZE - h)
+    x = randint(0, IM_DRAW_SIZE - w)
+    y = randint(0, IM_DRAW_SIZE - h)
     draw.rectangle([(x, y), (x + w, y + h)], fill=color.value)
 
   elif shape is Shape.CIRCLE:
