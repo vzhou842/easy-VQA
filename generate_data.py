@@ -3,8 +3,14 @@ from color import Color
 from images import create_image
 from questions import create_questions
 from random import choice
+import argparse
 import json
 import os
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--full-dataset', action='store_true')
+args = parser.parse_args()
+print('\n--- Calling train with full_dataset: {}'.format(args.full_dataset))
 
 if not os.path.exists('data/train/images'):
   os.makedirs('data/train/images/')
@@ -14,8 +20,12 @@ if not os.path.exists('data/test/images'):
 colors = list(Color)
 shapes = list(Shape)
 
-NUM_TRAIN = 800
-NUM_TEST = 200
+if args.full_dataset:
+  NUM_TRAIN = 16000
+  NUM_TEST = 4000
+else:
+  NUM_TRAIN = 1600
+  NUM_TEST = 400 
 
 def create_data(image_path, num):
   qs = []
