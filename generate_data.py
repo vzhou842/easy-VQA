@@ -21,8 +21,8 @@ colors = list(Color)
 shapes = list(Shape)
 
 if args.full_dataset:
-  NUM_TRAIN = 16000
-  NUM_TEST = 4000
+  NUM_TRAIN = 20000
+  NUM_TEST = 5000
 else:
   NUM_TRAIN = 1600
   NUM_TEST = 400 
