@@ -45,7 +45,7 @@ def create_questions(shape, color, image_id):
     yes_no_questions.append((f'is no {cur_color_name} shape present?', 'no' if c is color else 'yes'))
 
   questions = list(filter(lambda _: randint(0, 3) is 0, questions))
-  yes_no_questions = list(filter(lambda _: randint(0, 19) is 0, yes_no_questions))
+  yes_no_questions = list(filter(lambda _: randint(0, 23) is 0, yes_no_questions))
 
   all_questions = questions + yes_no_questions
   return (list(map(lambda x: x + (image_id,), all_questions)), len(yes_no_questions))
