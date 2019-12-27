@@ -1,6 +1,6 @@
 # data/
 
-This folder contains the outputs of running `generate_data.py`.
+This folder contains all easy-VQA data, created by running `gen_data/generate_data.py`, which outputs all results here.
 
 - `train/` contains all training data
 - `test/` contains all testing data
@@ -12,7 +12,7 @@ Within each of the above folders,
 
 ## Stats
 
-This dataset contains
+easy-VQA contains
 
 - 4000 train images and 38285 train questions.
 - 1000 test images and 9599 test questions.
