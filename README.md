@@ -8,40 +8,50 @@ The official Python package for the easy-VQA dataset. This package exists primar
 
 ## Usage
 
+### Questions
+
+Each question has 3 parts:
+- the question text
+- the answer
+- the image ID
+
+The question getters return corresponding arrays for each of the 3 parts:
+
 ```python
-from easy_vqa import get_train_data, get_test_data, get_answers
+from easy_vqa import get_train_questions, get_test_questions
 
-'''
-train_questions and test_questions are arrays of questions.
-Each question is represented as an array with 3 elements:
-0. The question text
-1. The answer
-2. The image ID
-train_questions contains 38285 questions.
-test_questions contains 9599 questions.
+train_questions, train_answers, train_image_ids = get_train_questions()
+test_questions, test_answers, test_image_ids = get_test_questions()
 
-train_image_paths and test_image_paths are dicts that map
-image ID to an absolute path that can be used to load the image.
-train_image_paths contains 4000 image paths.
-test_image_paths contains 1000 image paths.
-'''
-train_questions, train_image_paths = get_train_data()
-test_questions, test_image_paths = get_test_data()
+# Question 0 is at index 0 for all 3 arrays:
+print(train_questions[0]) # what shape does the image contain?
+print(train_answers[0])   # circle
+print(train_image_ids[0]) # 0
+```
 
-# Prints ['what shape does the image contain?', 'circle', 0]
-print(train_questions[0])
+### Images
 
-# Prints an absolute path ending in /easy_vqa/data/train/images/0.png
-print(train_image_paths[0])
+The image path getters return dicts that map image ID to absolute paths that can be used to load the image.
 
-'''
-answers is an array of all possible answers to questions in the
-easy-VQA dataset.
-'''
+```python
+from easy_vqa import get_train_image_paths, get_test_image_paths
+
+train_image_paths = get_train_image_paths()
+test_image_paths = get_test_image_paths()
+
+print(train_image_paths[0]) # ends in easy_vqa/data/train/images/0.png
+```
+
+### Answers
+
+The answers getter returns an array of all possible answers.
+
+```python
+from easy_vqa import get_answers
+
 answers = get_answers()
 
-# Prints 'teal'
-print(answers[0])
+print(answers) # ['teal', 'brown', 'black', 'gray', 'yes', 'blue', 'rectangle', 'yellow', 'triangle', 'red', 'circle', 'no', 'green']
 ```
 
 ## Advanced User Guide
