@@ -1,5 +1,6 @@
 # easy-vqa
 
+[![Build Status](https://travis-ci.com/vzhou842/easy-vqa.svg?branch=master)](https://travis-ci.com/vzhou842/easy-vqa)
 ![PyPI](https://img.shields.io/pypi/v/easy-vqa)
 
 The official Python package for the easy-VQA dataset. This package exists primarily to simplify the easy-VQA setup process.
