@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easy-vqa",
-    version="0.0.1",
+    version="1.0.0",
     author="Victor Zhou",
     author_email="vzhou842@gmail.com",
     description="The official package for the easy-VQA dataset.",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="http://github.com/vzhou842/easy-VQA",
     project_urls={
       'Demo': 'https://easy-vqa-demo.victorzhou.com',
-    }
+    },
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[
