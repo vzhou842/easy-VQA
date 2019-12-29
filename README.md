@@ -32,10 +32,10 @@ All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victo
 
 ### Example Questions
 
-_What color is the rectangle?_
-_Does the image contain a triangle?_
-_Is no blue shape present?_
-_What shape does the image contain?_
+- _What color is the rectangle?_
+- _Does the image contain a triangle?_
+- _Is no blue shape present?_
+- _What shape does the image contain?_
 
 ## Installing the Package
 
