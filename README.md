@@ -17,7 +17,25 @@ easy-VQA contains
 - 28003 training questions that are yes/no.
 - 7076 testing questions that are yes/no.
 
-All images are 64x64 color images.
+All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victorzhou.com/) of a model trained on the dataset.
+
+### Example Images
+
+![](./easy_vqa/data/train/images/0.png)
+![](./easy_vqa/data/train/images/1.png)
+![](./easy_vqa/data/train/images/2.png)
+![](./easy_vqa/data/train/images/3.png)
+![](./easy_vqa/data/train/images/5.png)
+![](./easy_vqa/data/train/images/6.png)
+![](./easy_vqa/data/train/images/7.png)
+![](./easy_vqa/data/train/images/8.png)
+
+### Example Questions
+
+_What color is the rectangle?_
+_Does the image contain a triangle?_
+_Is no blue shape present?_
+_What shape does the image contain?_
 
 ## Installing the Package
 
