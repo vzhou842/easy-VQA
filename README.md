@@ -7,6 +7,18 @@ The official repository for the easy-VQA dataset. Contains:
 - the official Python package for the dataset
 - the source code for generating the dataset
 
+## About the Dataset
+
+easy-VQA contains
+
+- 4000 train images and 38285 train questions.
+- 1000 test images and 9599 test questions.
+- 13 total possible answers.
+- 28003 training questions that are yes/no.
+- 7076 testing questions that are yes/no.
+
+All images are 64x64 color images.
+
 ## Installing the Package
 
 `pip install easy-vqa`
