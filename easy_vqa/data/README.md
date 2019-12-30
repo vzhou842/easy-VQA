@@ -14,8 +14,8 @@ Within each of the above folders,
 
 easy-VQA contains
 
-- 4000 train images and 38285 train questions.
-- 1000 test images and 9599 test questions.
+- 4000 train images and 38081 train questions.
+- 1000 test images and 9740 test questions.
 - 13 total possible answers.
-- 28003 training questions that are yes/no.
-- 7076 testing questions that are yes/no.
+- 27912 training questions that are yes/no.
+- 7149 testing questions that are yes/no.
