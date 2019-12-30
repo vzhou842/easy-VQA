@@ -22,27 +22,31 @@ def create_questions(shape, color, image_id):
 
   for s in Shape:
     cur_shape_name = s.name.lower()
-    yes_no_questions.append((f'is there a {cur_shape_name}?', 'yes' if s is shape else 'no'))
-    yes_no_questions.append((f'is there a {cur_shape_name} in the image?', 'yes' if s is shape else 'no'))
-    yes_no_questions.append((f'does the image contain a {cur_shape_name}?', 'yes' if s is shape else 'no'))
-    yes_no_questions.append((f'is a {cur_shape_name} present?', 'yes' if s is shape else 'no'))
+    pos_answer = 'yes' if s is shape else 'no'
+    yes_no_questions.append((f'is there a {cur_shape_name}?', pos_answer))
+    yes_no_questions.append((f'is there a {cur_shape_name} in the image?', pos_answer))
+    yes_no_questions.append((f'does the image contain a {cur_shape_name}?', pos_answer))
+    yes_no_questions.append((f'is a {cur_shape_name} present?', pos_answer))
 
-    yes_no_questions.append((f'is there not a {cur_shape_name}?', 'no' if s is shape else 'yes'))
-    yes_no_questions.append((f'is there not a {cur_shape_name} in the image?', 'no' if s is shape else 'yes'))
-    yes_no_questions.append((f'does the image not contain a {cur_shape_name}?', 'no' if s is shape else 'yes'))
-    yes_no_questions.append((f'is no {cur_shape_name} present?', 'no' if s is shape else 'yes'))
+    neg_answer = 'no' if s is shape else 'yes'
+    yes_no_questions.append((f'is there not a {cur_shape_name}?', neg_answer))
+    yes_no_questions.append((f'is there not a {cur_shape_name} in the image?', neg_answer))
+    yes_no_questions.append((f'does the image not contain a {cur_shape_name}?', neg_answer))
+    yes_no_questions.append((f'is no {cur_shape_name} present?', neg_answer))
 
   for c in Color:
     cur_color_name = c.name.lower()
-    yes_no_questions.append((f'is there a {cur_color_name} shape?', 'yes' if c is color else 'no'))
-    yes_no_questions.append((f'is there a {cur_color_name} shape in the image?', 'yes' if c is color else 'no'))
-    yes_no_questions.append((f'does the image contain a {cur_color_name} shape?', 'yes' if c is color else 'no'))
-    yes_no_questions.append((f'is a {cur_color_name} shape present?', 'yes' if c is color else 'no'))
+    pos_answer = 'yes' if c is color else 'no'
+    yes_no_questions.append((f'is there a {cur_color_name} shape?', pos_answer))
+    yes_no_questions.append((f'is there a {cur_color_name} shape in the image?', pos_answer))
+    yes_no_questions.append((f'does the image contain a {cur_color_name} shape?', pos_answer))
+    yes_no_questions.append((f'is a {cur_color_name} shape present?', pos_answer))
 
-    yes_no_questions.append((f'is there not a {cur_color_name} shape?', 'no' if c is color else 'yes'))
-    yes_no_questions.append((f'is there not a {cur_color_name} shape in the image?', 'no' if c is color else 'yes'))
-    yes_no_questions.append((f'does the image not contain a {cur_color_name} shape?', 'no' if c is color else 'yes'))
-    yes_no_questions.append((f'is no {cur_color_name} shape present?', 'no' if c is color else 'yes'))
+    neg_answer = 'no' if c is color else 'yes'
+    yes_no_questions.append((f'is there not a {cur_color_name} shape?', neg_answer))
+    yes_no_questions.append((f'is there not a {cur_color_name} shape in the image?', neg_answer))
+    yes_no_questions.append((f'does the image not contain a {cur_color_name} shape?', neg_answer))
+    yes_no_questions.append((f'is no {cur_color_name} shape present?', neg_answer))
 
   questions = list(filter(lambda _: randint(0, 99) < 32, questions))
   yes_no_questions = list(filter(lambda _: randint(0, 99) < 8, yes_no_questions))
