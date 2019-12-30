@@ -38,10 +38,10 @@ def draw_shape(draw, shape, color):
     draw.rectangle([(x, y), (x + w, y + h)], fill=color.value)
 
   elif shape is Shape.CIRCLE:
-    r = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
-    x = randint(r, IM_DRAW_SIZE - r)
-    y = randint(r, IM_DRAW_SIZE - r)
-    draw.ellipse([(x, y), (x + r, y + r)], fill=color.value)
+    d = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
+    x = randint(0, IM_DRAW_SIZE - d)
+    y = randint(0, IM_DRAW_SIZE - d)
+    draw.ellipse([(x, y), (x + d, y + d)], fill=color.value)
 
   elif shape is Shape.TRIANGLE:
     s = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
