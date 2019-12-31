@@ -45,8 +45,8 @@ def draw_shape(draw, shape, color):
 
   elif shape is Shape.TRIANGLE:
     s = randint(MIN_SHAPE_SIZE, MAX_SHAPE_SIZE)
-    x = randint(s, IM_DRAW_SIZE - s)
-    y = randint(s, IM_DRAW_SIZE - s)
+    x = randint(0, IM_DRAW_SIZE - s)
+    y = randint(math.ceil(s * math.sin(math.pi / 3)), IM_DRAW_SIZE)
     draw.polygon([
       (x, y),
       (x + s * math.cos(TRIANGLE_ANGLE_1), y + s * math.sin(TRIANGLE_ANGLE_1)),
