@@ -11,11 +11,11 @@ The official repository for the easy-VQA dataset. Contains:
 
 easy-VQA contains
 
-- 4000 train images and 38081 train questions.
-- 1000 test images and 9740 test questions.
+- 4000 train images and 38575 train questions.
+- 1000 test images and 9673 test questions.
 - 13 total possible answers.
-- 27912 training questions that are yes/no.
-- 7149 testing questions that are yes/no.
+- 28407 training questions that are yes/no.
+- 7136 testing questions that are yes/no.
 
 All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victorzhou.com/) of a model trained on the dataset.
 
