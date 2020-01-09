@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/pypi/v/easy-vqa)
 
 The official repository for the Easy Visual Question Answering (easy-VQA) dataset. Contains:
-- the official Python package for the dataset
+- the official [Python package](https://pypi.org/project/easy-vqa/) for the dataset
 - the source code for generating the dataset
 
 Read [the easy-VQA blog post](https://victorzhou.com/blog/easy-vqa/) for more.
