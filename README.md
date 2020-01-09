@@ -3,19 +3,21 @@
 [![Build Status](https://travis-ci.com/vzhou842/easy-vqa.svg?branch=master)](https://travis-ci.com/vzhou842/easy-vqa)
 ![PyPI](https://img.shields.io/pypi/v/easy-vqa)
 
-The official repository for the easy-VQA dataset. Contains:
+The official repository for the Easy Visual Question Answering (easy-VQA) dataset. Contains:
 - the official Python package for the dataset
 - the source code for generating the dataset
+
+Read [the easy-VQA blog post](https://victorzhou.com/blog/easy-vqa/) for more.
 
 ## About the Dataset
 
 easy-VQA contains
 
-- 4000 train images and 38575 train questions.
-- 1000 test images and 9673 test questions.
+- 4,000 train images and 38,575 train questions.
+- 1,000 test images and 9,673 test questions.
 - 13 total possible answers.
-- 28407 training questions that are yes/no.
-- 7136 testing questions that are yes/no.
+- 28,407 training questions that are yes/no.
+- 7,136 testing questions that are yes/no.
 
 All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victorzhou.com/) of a model trained on the dataset.
 
@@ -29,6 +31,8 @@ All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victo
 ![](./easy_vqa/data/train/images/6.png)
 ![](./easy_vqa/data/train/images/7.png)
 ![](./easy_vqa/data/train/images/8.png)
+
+_(these image links above only work on [Github](https://github.com/vzhou842/easy-VQA))_
 
 ### Example Questions
 
@@ -46,11 +50,11 @@ All images are 64x64 color images. See a [live demo](https://easy-vqa-demo.victo
 ### Questions
 
 Each question has 3 parts:
-- the question text
-- the answer
-- the image ID
+- the **question text**
+- the **answer**
+- the **image ID**
 
-The question getters return corresponding arrays for each of the 3 parts:
+The question getters return corresponding **arrays** for each of the 3 parts:
 
 ```python
 from easy_vqa import get_train_questions, get_test_questions
@@ -66,7 +70,7 @@ print(train_image_ids[0]) # 0
 
 ### Images
 
-The image path getters return dicts that map image ID to absolute paths that can be used to load the image.
+The image path getters return dicts that map **image ID** to **absolute paths** that can be used to load the image.
 
 ```python
 from easy_vqa import get_train_image_paths, get_test_image_paths
@@ -79,7 +83,7 @@ print(train_image_paths[0]) # ends in easy_vqa/data/train/images/0.png
 
 ### Answers
 
-The answers getter returns an array of all possible answers.
+The answers getter returns an **array** of all possible answers.
 
 ```python
 from easy_vqa import get_answers
